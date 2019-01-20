@@ -34,38 +34,17 @@ namespace Networking_with_FreeNet
             this.token.ban();
         }
 
-        void IPeer.on_message(CPacket msg)
+        void IPeer.on_message(CPacket read)
         {
-            var msgType = msg.pop_int16();
+            var msgType = read.pop_int16();
 
             switch (msgType)
             {
                 case signal_login:
                     {
-                        Console.WriteLine(buffer_read(msg, buffer_string));
-                        Console.WriteLine(buffer_read(msg, buffer_s32));
-                        for (var i = 0; i < 100; i++)
-                        {
-                            CPacket buffer = CPacket.create();
-                            buffer.set_signal(msgType);
-                            buffer_write(buffer, buffer_s8, i);
-                            buffer_write(buffer, buffer_s32, -1);
-                            buffer_write(buffer, buffer_string, "sex");
-                            buffer_write(buffer, buffer_string, "asd");
-                            buffer_write(buffer, buffer_string, "qweqweqwe");
-                            buffer_write(buffer, buffer_s8, -50);
-                            buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
-                            send(buffer);
-                        }
-                        break;
-                    }
-
-                case signal_echo:
-                    {
-                        buffer_read(msg, buffer_u32);
                         CPacket buffer = CPacket.create();
                         buffer.set_signal(msgType);
-                        buffer_write(buffer, buffer_u32, 2);
+                        buffer_write(buffer, buffer_u8, 79);
                         send(buffer);
                         break;
                     }
@@ -73,3 +52,4 @@ namespace Networking_with_FreeNet
         }
     }
 }
+

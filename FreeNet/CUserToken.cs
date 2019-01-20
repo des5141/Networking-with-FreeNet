@@ -165,7 +165,7 @@ namespace FreeNet
 
                 case SYS_UPDATE_HEARTBEAT:
                     this.send(ping_array);
-                    Console.WriteLine("ping : " + (time.ElapsedMilliseconds - a));
+                    //Console.WriteLine("ping : " + (time.ElapsedMilliseconds - a));
                     this.latest_heartbeat_time = DateTime.Now.Ticks;
                     return;
             }

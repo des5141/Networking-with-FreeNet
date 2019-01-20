@@ -29,9 +29,9 @@ namespace Networking_with_FreeNet
             aTimer.Elapsed += OnStep;
             aTimer.Enabled = true;
 
-            service.disable_heartbeat();
+            //service.disable_heartbeat();
 
-            Console.WriteLine("Started!");
+            Console.WriteLine("welcome to the server!");
 			while (true)
 			{
                 string input = Console.ReadLine();
@@ -44,6 +44,7 @@ namespace Networking_with_FreeNet
 		}
 		static void on_session_created(CUserToken token)
 		{
+            Console.WriteLine("connected");
             CGameUser user = new CGameUser(token);
             token.ping_array = new ArraySegment<byte>(ping_buffer.buffer, 0, ping_buffer.position);
 
@@ -56,7 +57,7 @@ namespace Networking_with_FreeNet
 
 		public static void remove_user(CGameUser user)
 		{
-            Console.WriteLine("a");
+            Console.WriteLine("User Disconnected!");
             lock (userlist)
             {
                 userlist.Remove(user);
@@ -66,7 +67,8 @@ namespace Networking_with_FreeNet
         {
             if(a != e.SignalTime.Second)
             {
-                Console.WriteLine("----{0}----", b);
+                if(b != 0)
+                    Console.WriteLine("FPS : {0}", b);
                 a = e.SignalTime.Second;
                 b = 0;
             }
