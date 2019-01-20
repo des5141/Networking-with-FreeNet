@@ -38,26 +38,34 @@ namespace Networking_with_FreeNet
         {
             var msgType = msg.pop_int16();
 
-            switch(msgType)
+            switch (msgType)
             {
                 case signal_login:
-                    Console.WriteLine(buffer_read(msg, buffer_string));
-                    Console.WriteLine(buffer_read(msg, buffer_s32));
-                    CPacket buffer = CPacket.create();
-                    buffer.set_signal(msgType);
-                    buffer_write(buffer, buffer_s8, 254);
-                    buffer_write(buffer, buffer_s32, -1);
-                    buffer_write(buffer, buffer_string, "sex");
-                    buffer_write(buffer, buffer_string, "asd");
-                    buffer_write(buffer, buffer_string, "qweqweqwe");
-                    buffer_write(buffer, buffer_s8, -50);
-                    buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
-                    send(buffer);
-                    break;
+                    {
+                        Console.WriteLine(buffer_read(msg, buffer_string));
+                        Console.WriteLine(buffer_read(msg, buffer_s32));
+                        CPacket buffer = CPacket.create();
+                        buffer.set_signal(msgType);
+                        buffer_write(buffer, buffer_s8, 254);
+                        buffer_write(buffer, buffer_s32, -1);
+                        buffer_write(buffer, buffer_string, "sex");
+                        buffer_write(buffer, buffer_string, "asd");
+                        buffer_write(buffer, buffer_string, "qweqweqwe");
+                        buffer_write(buffer, buffer_s8, -50);
+                        buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
+                        send(buffer);
+                        break;
+                    }
 
                 case signal_echo:
-
-                    break;
+                    {
+                        buffer_read(msg, buffer_u32);
+                        CPacket buffer = CPacket.create();
+                        buffer.set_signal(msgType);
+                        buffer_write(buffer, buffer_u32, 2);
+                        send(buffer);
+                        break;
+                    }
             }
         }
     }

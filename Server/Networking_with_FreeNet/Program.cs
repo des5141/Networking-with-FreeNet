@@ -23,7 +23,7 @@ namespace Networking_with_FreeNet
 
             Timer aTimer = new Timer(1000 / 60);
             aTimer.Elapsed += OnStep;
-            aTimer.Enabled = true;
+            //aTimer.Enabled = true;
 
             service.disable_heartbeat();
 

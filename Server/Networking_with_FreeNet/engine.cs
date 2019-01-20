@@ -28,11 +28,11 @@ namespace Networking_with_FreeNet
             switch (type)
             {
                 case buffer_u8:
-                    buffer.push((byte)value);
+                    buffer.push((Byte)value);
                     break;
 
                 case buffer_s8:
-                    buffer.push((sbyte)value);
+                    buffer.push((SByte)value);
                     break;
 
                 case buffer_u16:
