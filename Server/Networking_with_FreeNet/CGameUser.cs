@@ -7,6 +7,12 @@ namespace Networking_with_FreeNet
     {
         public CUserToken token;
 
+        public void send(CPacket msg)
+        {
+            msg.record_size();
+            this.token.send(new ArraySegment<byte>(msg.buffer, 0, msg.position));
+        }
+
         public CGameUser(CUserToken token)
         {
             this.token = token;
@@ -16,12 +22,6 @@ namespace Networking_with_FreeNet
         void IPeer.on_removed()
         {
             Program.remove_user(this);
-        }
-
-        public void send(CPacket msg)
-        {
-            msg.record_size();
-            this.token.send(new ArraySegment<byte>(msg.buffer, 0, msg.position));
         }
 
         public void send(ArraySegment<byte> data)
@@ -44,16 +44,19 @@ namespace Networking_with_FreeNet
                     {
                         Console.WriteLine(buffer_read(msg, buffer_string));
                         Console.WriteLine(buffer_read(msg, buffer_s32));
-                        CPacket buffer = CPacket.create();
-                        buffer.set_signal(msgType);
-                        buffer_write(buffer, buffer_s8, 254);
-                        buffer_write(buffer, buffer_s32, -1);
-                        buffer_write(buffer, buffer_string, "sex");
-                        buffer_write(buffer, buffer_string, "asd");
-                        buffer_write(buffer, buffer_string, "qweqweqwe");
-                        buffer_write(buffer, buffer_s8, -50);
-                        buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
-                        send(buffer);
+                        for (var i = 0; i < 100; i++)
+                        {
+                            CPacket buffer = CPacket.create();
+                            buffer.set_signal(msgType);
+                            buffer_write(buffer, buffer_s8, i);
+                            buffer_write(buffer, buffer_s32, -1);
+                            buffer_write(buffer, buffer_string, "sex");
+                            buffer_write(buffer, buffer_string, "asd");
+                            buffer_write(buffer, buffer_string, "qweqweqwe");
+                            buffer_write(buffer, buffer_s8, -50);
+                            buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
+                            send(buffer);
+                        }
                         break;
                     }
 
