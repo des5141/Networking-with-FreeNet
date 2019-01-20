@@ -1,0 +1,9 @@
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Debug\netstandard2.0\linux-arm\FreeNet.Core.deps.json
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Debug\netstandard2.0\linux-arm\FreeNet.Core.dll
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Debug\netstandard2.0\linux-arm\FreeNet.Core.pdb
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.AssemblyInfoInputs.cache
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.AssemblyInfo.cs
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.dll
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.pdb
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Debug\netstandard2.0\linux-arm\FreeNet.Core.csprojAssemblyReference.cache

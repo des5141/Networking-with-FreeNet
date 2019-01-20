@@ -1,0 +1,9 @@
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Release\netstandard2.0\FreeNet.Core.deps.json
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Release\netstandard2.0\FreeNet.Core.dll
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\bin\Release\netstandard2.0\FreeNet.Core.pdb
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.csproj.CoreCompileInputs.cache
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.AssemblyInfoInputs.cache
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.AssemblyInfo.cs
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.dll
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.pdb
+C:\Users\Hotkey_\source\repos\KDN_Web_Server\FreeNet.Core\obj\Release\netstandard2.0\FreeNet.Core.csprojAssemblyReference.cache
