@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Net.Sockets;
 using System.Threading;
+using System.Diagnostics;
 
 namespace FreeNet
 {
@@ -66,7 +67,10 @@ namespace FreeNet
         public long latest_heartbeat_time { get; private set; }
         CHeartbeatSender heartbeat_sender;
         bool auto_heartbeat;
+        public ArraySegment<byte> ping_array;
 
+        public Stopwatch time = new Stopwatch();
+        public Double a = 0;
 
         public CUserToken(IMessageDispatcher dispatcher)
         {
@@ -160,9 +164,9 @@ namespace FreeNet
                     return;
 
                 case SYS_UPDATE_HEARTBEAT:
-                    //Console.WriteLine("heartbeat : " + DateTime.Now);
+                    this.send(ping_array);
+                    Console.WriteLine("ping : " + (time.ElapsedMilliseconds - a));
                     this.latest_heartbeat_time = DateTime.Now.Ticks;
-                    this.send(msg);
                     return;
             }
 

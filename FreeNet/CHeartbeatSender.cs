@@ -31,7 +31,8 @@ namespace FreeNet
 
         void send()
         {
-            CPacket msg = CPacket.create((short)CUserToken.SYS_UPDATE_HEARTBEAT);
+            CPacket msg = CPacket.create((Int16)CUserToken.SYS_UPDATE_HEARTBEAT);
+            server.a = server.time.ElapsedMilliseconds;
             this.server.send(msg);
         }
 
