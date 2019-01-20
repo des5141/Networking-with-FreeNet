@@ -41,19 +41,17 @@ namespace Networking_with_FreeNet
             switch(msgType)
             {
                 case signal_login:
+                    Console.WriteLine(buffer_read(msg, buffer_string));
+                    Console.WriteLine(buffer_read(msg, buffer_s32));
                     CPacket buffer = CPacket.create();
-                    buffer.set_protocol(msgType);
-                    buffer.push("Hello");
-
-                    buffer.push("sex");
-
-                    buffer.push("오르피아 최고");
-
-                    buffer.push("하 언조 비카이");
-
-                    buffer.push((byte)69);
-
-                    buffer.push((Int16)25505);
+                    buffer.set_signal(msgType);
+                    buffer_write(buffer, buffer_s8, 254);
+                    buffer_write(buffer, buffer_s32, -1);
+                    buffer_write(buffer, buffer_string, "sex");
+                    buffer_write(buffer, buffer_string, "asd");
+                    buffer_write(buffer, buffer_string, "qweqweqwe");
+                    buffer_write(buffer, buffer_s8, -50);
+                    buffer_write(buffer, buffer_string, "loli ZOA!!!!!");
                     send(buffer);
                     break;
 
