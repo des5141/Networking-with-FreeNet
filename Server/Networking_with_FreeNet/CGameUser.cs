@@ -44,6 +44,16 @@ namespace Networking_with_FreeNet
                     CPacket buffer = CPacket.create();
                     buffer.set_protocol(msgType);
                     buffer.push("Hello");
+
+                    buffer.push("sex");
+
+                    buffer.push("오르피아 최고");
+
+                    buffer.push("하 언조 비카이");
+
+                    buffer.push((byte)69);
+
+                    buffer.push((Int16)25505);
                     send(buffer);
                     break;
 

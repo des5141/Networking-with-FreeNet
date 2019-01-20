@@ -180,16 +180,18 @@ namespace FreeNet
 
 		public void push(string data)
 		{
+            data = data + '\0';
 			byte[] temp_buffer = Encoding.UTF8.GetBytes(data);
-
-			Int16 len = (Int16)temp_buffer.Length;
+            Console.WriteLine(this.position);
+            Int16 len = (Int16)temp_buffer.Length;
 			byte[] len_buffer = BitConverter.GetBytes(len);
 			len_buffer.CopyTo(this.buffer, this.position);
-			this.position += sizeof(Int16);
+			//this.position += sizeof(Byte);  
 
 			temp_buffer.CopyTo(this.buffer, this.position);
 			this.position += temp_buffer.Length;
-		}
+            Console.WriteLine(this.position);
+        }
 
         public void push(float data)
         {
