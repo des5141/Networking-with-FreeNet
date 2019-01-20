@@ -137,7 +137,7 @@ namespace FreeNet
             // active close를 위한 코딩.
             //   서버에서 종료하라고 연락이 왔는지 체크한다.
             //   만약 종료신호가 맞다면 disconnect를 호출하여 받은쪽에서 먼저 종료 요청을 보낸다.
-            Console.WriteLine(msg.protocol_id);
+            // Console.WriteLine(msg.protocol_id);
             switch (msg.protocol_id)
             {
                 case SYS_CLOSE_REQ:
@@ -162,6 +162,7 @@ namespace FreeNet
                 case SYS_UPDATE_HEARTBEAT:
                     //Console.WriteLine("heartbeat : " + DateTime.Now);
                     this.latest_heartbeat_time = DateTime.Now.Ticks;
+                    this.send(msg);
                     return;
             }
 
@@ -380,6 +381,7 @@ namespace FreeNet
                 if (this.sending_list.Count <= 0)
                 {
                     this.socket.Shutdown(SocketShutdown.Send);
+                    this.socket.Close();
                     return;
                 }
 

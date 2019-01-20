@@ -3,9 +3,9 @@ using FreeNet;
 
 namespace Networking_with_FreeNet
 {
-    class CGameUser : IPeer
+    public partial class CGameUser : IPeer
     {
-        CUserToken token;
+        public CUserToken token;
 
         public CGameUser(CUserToken token)
         {
@@ -36,7 +36,21 @@ namespace Networking_with_FreeNet
 
         void IPeer.on_message(CPacket msg)
         {
-            
+            var msgType = msg.pop_int16();
+
+            switch(msgType)
+            {
+                case signal_login:
+                    CPacket buffer = CPacket.create();
+                    buffer.set_protocol(msgType);
+                    buffer.push("Hello");
+                    send(buffer);
+                    break;
+
+                case signal_echo:
+
+                    break;
+            }
         }
     }
 }

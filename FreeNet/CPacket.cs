@@ -24,9 +24,16 @@ namespace FreeNet
             //CPacket packet = CPacketBufferManager.pop();
             packet.set_protocol(protocol_id);
 			return packet;
-		}
+        }
+        public static CPacket create()
+        {
+            CPacket packet = new CPacket();
+            //todo:다음 리팩토링 대상은 바로 여기다. CPacketBufferManager!!!
+            //CPacket packet = CPacketBufferManager.pop();
+            return packet;
+        }
 
-		public static void destroy(CPacket packet)
+        public static void destroy(CPacket packet)
 		{
 			//CPacketBufferManager.push(packet);
 		}
