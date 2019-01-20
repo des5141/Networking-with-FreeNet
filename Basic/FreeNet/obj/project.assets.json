@@ -184,11 +184,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\FreeNet\\FreeNet.Core.csproj",
+      "projectUniqueName": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\Basic\\FreeNet\\FreeNet.Core.csproj",
       "projectName": "FreeNet.Core",
-      "projectPath": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\FreeNet\\FreeNet.Core.csproj",
+      "projectPath": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\Basic\\FreeNet\\FreeNet.Core.csproj",
       "packagesPath": "C:\\Users\\hades\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\FreeNet\\obj\\",
+      "outputPath": "C:\\Users\\hades\\Desktop\\코딩\\Projects\\Networking-with-FreeNet\\Basic\\FreeNet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

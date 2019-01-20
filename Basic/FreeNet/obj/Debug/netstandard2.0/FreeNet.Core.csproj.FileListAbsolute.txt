@@ -16,3 +16,12 @@ C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\FreeNet\obj\Debug
 C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.AssemblyInfo.cs
 C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.dll
 C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.pdb
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\bin\Debug\netstandard2.0\FreeNet.Core.deps.json
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\bin\Debug\netstandard2.0\FreeNet.Core.dll
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\bin\Debug\netstandard2.0\FreeNet.Core.pdb
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.csprojAssemblyReference.cache
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.csproj.CoreCompileInputs.cache
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.AssemblyInfoInputs.cache
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.AssemblyInfo.cs
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.dll
+C:\Users\hades\Desktop\코딩\Projects\Networking-with-FreeNet\Basic\FreeNet\obj\Debug\netstandard2.0\FreeNet.Core.pdb
