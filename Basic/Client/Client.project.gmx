@@ -27,15 +27,29 @@
     <font>fonts\fnt_text</font>
   </fonts>
   <objects name="objects">
-    <object>objects\sys_init</object>
-    <object>objects\sys_network</object>
-    <object>objects\obj_network</object>
+    <objects name="Init">
+      <object>objects\sys_init</object>
+    </objects>
+    <objects name="System">
+      <object>objects\sys_network</object>
+    </objects>
+    <objects name="Network">
+      <object>objects\obj_network</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_init</room>
-    <room>rooms\rm_connect</room>
-    <room>rooms\rm_login</room>
-    <room>rooms\rm_main</room>
+    <rooms name="Init">
+      <room>rooms\rm_init</room>
+    </rooms>
+    <rooms name="Connect">
+      <room>rooms\rm_connect</room>
+    </rooms>
+    <rooms name="Login">
+      <room>rooms\rm_login</room>
+    </rooms>
+    <rooms name="Main">
+      <room>rooms\rm_main</room>
+    </rooms>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
