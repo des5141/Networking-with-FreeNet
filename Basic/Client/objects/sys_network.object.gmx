@@ -121,7 +121,35 @@ if (ds_map_find_value(async_load, 'id') == socket) {
                 processing_buffer = ds_queue_dequeue(global.message_processing);
                 if not(buffer_get_size(processing_buffer) == 1){
                     signal = buffer_read(processing_buffer, buffer_s16);
-                    event_user(0)
+                    // 서버 관련 처리
+                    var check = true;
+                    switch(signal) {
+                        // HeartBeat 1
+                        case -2:
+                            var buffer = FreeNet_createBuffer();
+                            FreeNet_write(buffer, buffer_s16, -2);
+                            FreeNet_write(buffer, buffer_u8, 1);
+                            FreeNet_send(buffer);
+                            check = false;
+                            break;
+                            
+                        // HeartBeat 2
+                        case -3:      
+                            var buffer = FreeNet_createBuffer();
+                            FreeNet_write(buffer, buffer_s16, -3);
+                            FreeNet_send(buffer);
+                            ping[0] = current_time;
+                            check = false;
+                            break;
+                            
+                        // HeartBeat 3
+                        case FreeNet.signal_heartbeat:
+                            ping[1] = current_time - ping[0];
+                            check = false;
+                            break;
+                    }
+                    if(check)
+                        event_user(0);
                 }
                 buffer_delete(processing_buffer);
             }

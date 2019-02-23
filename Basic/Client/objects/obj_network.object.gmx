@@ -78,28 +78,6 @@ FreeNet_status();
             <kind>1</kind>
             <string>///Incomming Messages
 switch(signal) {
-    // Start HeartBeat
-    case -2:
-        var buffer = FreeNet_createBuffer();
-        FreeNet_write(buffer, buffer_s16, -2);
-        FreeNet_write(buffer, buffer_u8, 1);
-        FreeNet_send(buffer);
-        break;
-        
-    // Maintain HeartBeat
-    case -3:      
-        var buffer = FreeNet_createBuffer();
-        FreeNet_write(buffer, buffer_s16, -3);
-        FreeNet_send(buffer);
-        ping[0] = current_time;
-        break;
-        
-    // Maintain HeartBeat2
-    case FreeNet.signal_heartbeat:
-        ping[1] = current_time - ping[0];
-        break;
-        
-    // 
     case FreeNet.signal_login:
         show_message(FreeNet_read(processing_buffer, buffer_u8));
         break;

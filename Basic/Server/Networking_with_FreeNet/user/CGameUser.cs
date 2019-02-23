@@ -7,21 +7,16 @@ namespace Networking_with_FreeNet
     {
         public CUserToken token;
 
-        public void send(CPacket msg)
-        {
-            msg.record_size();
-            this.token.send(new ArraySegment<byte>(msg.buffer, 0, msg.position));
-        }
-
         public CGameUser(CUserToken token)
         {
             this.token = token;
             this.token.set_peer(this);
         }
 
-        void IPeer.on_removed()
+        public void send(CPacket msg)
         {
-            Program.remove_user(this);
+            msg.record_size();
+            this.token.send(new ArraySegment<byte>(msg.buffer, 0, msg.position));
         }
 
         public void send(ArraySegment<byte> data)
@@ -29,14 +24,9 @@ namespace Networking_with_FreeNet
             this.token.send(data);
         }
 
-        void IPeer.disconnect()
-        {
-            this.token.ban();
-        }
-
         void IPeer.on_message(CPacket read)
         {
-            var msgType = read.pop_int16();
+            var msgType = buffer_read(read, buffer_s16);
 
             switch (msgType)
             {
@@ -50,6 +40,16 @@ namespace Networking_with_FreeNet
                     }
             }
         }
+
+        void IPeer.disconnect()
+        {
+            this.token.ban();
+        }
+
+        void IPeer.on_removed()
+        {
+            Program.remove_user(this);
+        }
+
     }
 }
-
