@@ -26,8 +26,7 @@ namespace Networking_with_FreeNet
 
         void IPeer.on_message(CPacket read)
         {
-            var msgType = buffer_read(read, buffer_s16);
-
+            short msgType = buffer_read(read, buffer_s16);
             switch (msgType)
             {
                 case signal_login:
