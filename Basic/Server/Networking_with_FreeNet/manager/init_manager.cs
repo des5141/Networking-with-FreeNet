@@ -80,4 +80,43 @@ namespace Networking_with_FreeNet
         }
         #endregion
     }
+
+    public partial class Program
+    {
+        #region Init
+        static List<CGameUser> userlist = new List<CGameUser>();
+        static CNetworkService service = new CNetworkService(false);
+        static CPacket ping_buffer = CPacket.create(1);
+
+        public static void CServer_Run(String IP, int PORT, int MAX_CLIENTS)
+        {
+            ping_buffer.record_size();
+            service.session_created_callback += on_session_created;
+            service.initialize(MAX_CLIENTS, 1024);
+            service.listen(IP, PORT, 100);
+        }
+        #endregion
+
+        #region Server Fuction
+        static void on_session_created(CUserToken token)
+        {
+            Console.WriteLine("connected");
+            CGameUser user = new CGameUser(token);
+            token.ping_array = new ArraySegment<byte>(ping_buffer.buffer, 0, ping_buffer.position);
+            token.time.Start();
+            lock (userlist)
+            {
+                userlist.Add(user);
+            }
+        }
+        public static void remove_user(CGameUser user)
+        {
+            Console.WriteLine("User Disconnected!");
+            lock (userlist)
+            {
+                userlist.Remove(user);
+            }
+        }
+        #endregion
+    }
 }
